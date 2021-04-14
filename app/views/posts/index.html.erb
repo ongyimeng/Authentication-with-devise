@@ -1,0 +1,14 @@
+<%= render "header.html.erb" %>
+
+<% @posts.each do |post| %>
+    <div class="feed">
+        <% if user_signed_in? %>
+            <strong><%= post.user.email %></strong>
+        <% else %>
+            <strong><%= "login to see email" %></strong>
+        <% end %>
+
+        <p><%= post.title %><p>
+        <p><%= post.body %><p>
+    <div>
+<% end %>
